@@ -1,33 +1,13 @@
-package model;
+package org.example;
 
-import java.util.Date;
-import ui.UIMenu;
 
 public class Main {
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-
-        UIMenu.showMenu();
-
-        Doctor myDoctor = new Doctor("Anahí Salgado", "anahi@anahi.com", "Cardiology");
-        myDoctor.addAvailableAppointment(new Date(), "4pm");
-        myDoctor.addAvailableAppointment(new Date(), "10am");
-        myDoctor.addAvailableAppointment(new Date(), "1pm");
-
-        System.out.println(myDoctor);
-
-        myDoctor.hashCode();
-        /*
-
-        for (Doctor.AvailableAppointment aA: myDoctor.getAvailableAppointments()) {
-            System.out.println(aA.getDate() + " " + aA.getTime());
-        }
-        */
-
-
-        System.out.println();
-        System.out.println();
-        Patient patient = new Patient("Alejandra", "alejandra@mail.com");
-        System.out.println(patient);
+        DataBaseConnection dbConnection = new DataBaseConnection();
+        dbConnection.connectAndQuery();
 
     }
 }
